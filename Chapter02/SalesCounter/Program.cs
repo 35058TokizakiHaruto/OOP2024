@@ -2,24 +2,20 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SalesCounter {
     internal class Program {
         static void Main(string[] args) {
-
-            //戻り値を受け取る
-            List<Sale> sales = ReadSales(@"C:Users\infosys\source\repos\OOP2024\Chapter02\SalesCounter\Debug\data\Sale.csv");
-
-            //戻り値のコレクションを一件ずつ出力する
-            foreach (Sale sale in sales) {
-                // Console.WriteLine(sale.ShopName + " " + sale.ProductcCategory + " "+sale.Amount) ;
-
-                // Console.WriteLine("店名:{0} カテゴリー:{1} 売上:{2}", sale.ShopName,sale.ProductcCategory,sale.Amount);
-                Console.WriteLine($"店名:{sale.ShopName} カテゴリー:{sale.ProductcCategory} 売上:{sale.Amount}");
+            SalesCounter sales = new SalesCounter(ReadSales(@"data\sales.csv"));
+            Dictionary<string,int> amountPerStore = sales.GetPerStoreSales();
+            foreach (KeyValuePair<string ,int> obj in amountPerStore){
+                Console.WriteLine("{0} {1}", obj.Key, obj.Value);
             }
-        }
+
+        } 
 
         //売り上げデータを読み込み、Saleオブジェクトのリストを返す
         static List<Sale> ReadSales(string filePath) {

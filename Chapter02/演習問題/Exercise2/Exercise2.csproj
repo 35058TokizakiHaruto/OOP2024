@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{ABFF734D-F396-4D10-8240-86FA1CF8195D}</ProjectGuid>
+    <ProjectGuid>{E4AF3FD2-9029-4EF7-AE98-ABE13E3F17ED}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SalesCounter</RootNamespace>
-    <AssemblyName>SalesCounter</AssemblyName>
+    <RootNamespace>Exercise2</RootNamespace>
+    <AssemblyName>Exercise2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,18 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
+    <Compile Include="InchConverter.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sale.cs" />
-    <Compile Include="SalesCounter.cs" />
+    <Compile Include="YardConveter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="data\Sales.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

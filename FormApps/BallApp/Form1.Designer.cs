@@ -25,6 +25,7 @@
         private void InitializeComponent() {
             components = new System.ComponentModel.Container();
             timer1 = new System.Windows.Forms.Timer(components);
+            timer2 = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // timer1
@@ -47,5 +48,6 @@
 
         #endregion
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
     }
 }

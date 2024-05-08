@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E4AF3FD2-9029-4EF7-AE98-ABE13E3F17ED}</ProjectGuid>
+    <ProjectGuid>{CE0E1029-A9CF-4921-BAB2-D79336F93CF1}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Exercise2</RootNamespace>
-    <AssemblyName>Exercise2</AssemblyName>
+    <RootNamespace>Exercise2_</RootNamespace>
+    <AssemblyName>Exercise2%27</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,9 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InchConverter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="YardConveter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

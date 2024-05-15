@@ -39,7 +39,7 @@ namespace Exercise01 {
 
 
         private static void Exercise1_3(List<int> numbers) {
-            var Where 
+              
 
         }
 

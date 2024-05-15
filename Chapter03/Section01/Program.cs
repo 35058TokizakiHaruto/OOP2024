@@ -18,7 +18,7 @@ namespace Section01 {
                 "Hong Kong",
             };
 
-            var query = names.Where(s => s.Length <= 5);
+            var query = names.Where(s => s.Length <= 5).ToList();// ToArray
             foreach(var item in query) {
                 Console.WriteLine(item);
             }

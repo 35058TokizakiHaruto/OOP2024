@@ -27,24 +27,24 @@ namespace Exercise01 {
         }
 
         private static void Exercise1_1(List<int> numbers) {
-            var exists = numbers.Exists(s => s % 8 == 0|| s % 9 == 0);
-            Console.WriteLine(exists);
+            var exists = numbers.Exists(s => s % 8 == 0 || s % 9 == 0);
+
         }
 
 
         private static void Exercise1_2(List<int> numbers) {
             numbers.ForEach(s => Console.WriteLine(s % 2.0));
-            Console.WriteLine(numbers);
+
         }
 
 
         private static void Exercise1_3(List<int> numbers) {
-              
+            numbers.Where(n => 50 <= n).ToList().ForEach(s => Console.WriteLine(s));
 
         }
 
         private static void Exercise1_4(List<int> numbers) {
-
+            numbers.Select(n => )
         }
     }
 }

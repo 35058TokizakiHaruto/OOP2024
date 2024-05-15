@@ -20,7 +20,16 @@ namespace BallApp {
             Count++;
         }
 
-        public override bool Move() {
+        public override bool Move(PictureBox pbBar, PictureBox pbBall) {
+
+
+            Rectangle rBar = new Rectangle(pbBar.Location.X, pbBar.Location.Y,
+               pbBar.Width, pbBar.Height);
+            Rectangle rBall = new Rectangle(pbBall.Location.X, pbBall.Location.Y,
+               pbBall.Width, pbBall.Height);
+
+
+
             if (PosX > 750 || PosX < 0) {
                 //移動量の符号を反転
                 MoveX = -MoveX;
@@ -38,6 +47,10 @@ namespace BallApp {
 
 
 
+        }
+
+        public override bool Move(Keys direction) {
+           return true;
         }
     }
 }

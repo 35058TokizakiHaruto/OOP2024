@@ -9,10 +9,10 @@ namespace Exercise2_ {
         static void Main(string[] args) {
             if (args.Length >= 1 && args[0] == "-tom") {
                 //ヤードからメートルへの対応表を出力
-                PrintYardToMeterList(1, 10);
+               PrintYardToMeterList(1, 10);
             } else {
-                //メートルからヤードへの対応表を出力
-                PrintyardMeterToList(int.Parse(args[1]), int.Parse(args[2]));
+                //メートルからヤードへの対応
+                rse(args[1]), int.Parse(args[2]);
             }
         }
         private static void PrintYdToMeterList(int start, int stop) {

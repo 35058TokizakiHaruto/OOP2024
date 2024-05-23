@@ -24,7 +24,7 @@ namespace Exercise02 {
             Exercise2_3(names);
             Console.WriteLine();
 
-            Console.WriteLine("***** 3.2.4 *****");           
+            Console.WriteLine("***** 3.2.4 *****");
             Exercise2_4(names);
             Console.WriteLine();
         }
@@ -40,13 +40,13 @@ namespace Exercise02 {
                 }
                 int index = names.FindIndex(s => s == line);
                 Console.WriteLine(index);
-            }while (true);
+            } while (true);
 
         }
 
         private static void Exercise2_2(List<string> names) {
             var count = names.Count(s => s.Contains('o'));
-                Console.WriteLine(count);
+            Console.WriteLine(count);
         }
 
         private static void Exercise2_3(List<string> names) {
@@ -57,7 +57,7 @@ namespace Exercise02 {
         }
 
         private static void Exercise2_4(List<string> names) {
-            var selected = names.Where(s => s.StartsWith("B")).Select(s => new { s.Length, s});
+            var selected = names.Where(s => s.StartsWith("B")).Select(s => new { s.Length, s });
             foreach (var obj in selected) {
                 Console.WriteLine(obj.s + "," + obj.Length);
             }

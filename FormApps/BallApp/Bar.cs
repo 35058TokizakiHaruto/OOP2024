@@ -3,22 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.XPath;
 
 namespace BallApp {
-    internal class Bar: Obj {
+    internal class Bar : Obj {
 
-        public Bar(double xp, double yp) 
-         : base(xp, yp, @"Picture\bar.png") {
+        public Bar(double xp, double yp)
+            : base(xp, yp, @"Picture\bar.png") {
 
             MoveX = 10;
             MoveY = 0;
-
         }
 
-        public override bool Move() {
-            return true;
-
+        public override int Move(PictureBox pbBar, PictureBox pbBall) {
+            return 0;
         }
 
         public override bool Move(Keys direction) {
@@ -30,13 +27,8 @@ namespace BallApp {
                 if (PosX > 0) {
                     PosX -= MoveX;
                 }
-
             }
             return true;
-        }    
+        }
     }
 }
-    
-    
-
-

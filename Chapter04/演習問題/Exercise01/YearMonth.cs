@@ -9,31 +9,39 @@ namespace Exercise01 {
 
     public class YearMonth {
         //4.1.1
-        public int Year { get; private set; }
-        public int Month { get; private set; }
+        public int year { get; private set; }
+        public int month { get; private set; }
 
         //コンストラクタ
         public YearMonth(int Year, int Month) {
-            this.Year = Year;
-            this.Month = Month;
+            this.year = Year;
+            this.month = Month;
         }
-
 
         //4.1.2
         public bool Is21Century {
             get {
-                return 2001 <= Year && Year <= 2100;
+                return 2001 <= year && year <= 2100;
             }
         }
 
         //4.1.3
-        //public YearMonth AddOneMonth() {
-               // return new YearMonth(year, month);
+        public YearMonth AddOneMonth() {
+            int year = this.year;
+            int month = this.month;
+            month++;
+            if (month == 12) {
+                year++;
+                month = 1;
             }
+            return new YearMonth(year, month);
+        }
         
         //4.1.4
-       // public override string ToString() {
-         //   return Year + "年 " + Month + "月";
+        public override string ToString() {
+            return year + "年 " + month + "月";
         }
-    
+    }
+}
+
 

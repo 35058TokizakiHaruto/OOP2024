@@ -42,7 +42,7 @@
             score.Size = new Size(79, 37);
             score.TabIndex = 0;
             score.Text = "score";
-            score.Click += score_Click;
+          //  score.Click += score_Click;
             // 
             // Form1
             // 

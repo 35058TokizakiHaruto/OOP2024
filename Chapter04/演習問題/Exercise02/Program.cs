@@ -40,7 +40,7 @@ namespace Exercise02 {
         // 4.2.3(4.2.4で呼び出されるメソッド)
         static YearMonth FindFirst21C(YearMonth[] yms) {
             foreach (var ym in yms) {
-               // if (ym.Is21Century)
+                //if (ym.Is21Century)
                     return ym;
             }
             return null;

@@ -13,7 +13,7 @@ namespace Exercise03 {
             var text = "Jackdaws love my big sphinx of quartz";
             var text2 = "Jackdaws love my big sphinx of quartz";
 
-            
+
 
             Exercise3_1(text);
             Console.WriteLine("-----");
@@ -57,16 +57,19 @@ namespace Exercise03 {
         private static void Exercise3_5(string text) {
             var array = text.Split(' ').ToArray();
 
-            var sb = new StringBuilder();           
-            foreach (var word in array) {
-                sb.Append(word);
-                sb.Append(' ');
+            if (array.Length > 0) {
+                var sb = new StringBuilder(array[0]);
+                foreach (var word in array.Skip(1)) {
+                    sb.Append(word);
+                    sb.Append(' ');
+                }
+                Console.WriteLine(sb);
             }
-            Console.WriteLine(sb);
+
         }
 
         private static void Exercise3_6(string text) {
-            
+
         }
     }
 }

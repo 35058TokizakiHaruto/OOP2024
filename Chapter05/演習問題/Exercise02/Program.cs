@@ -8,11 +8,12 @@ namespace Exercise02 {
     internal class Program {
         static void Main(string[] args) {
             var line = Console.ReadLine();
-            int num1 = int.Parse("123");
-            Console.WriteLine(num1);
-            if (int.TryParse(str out num1)) {
-                return s;
-            } else;            
+            int num;
+            if (int.TryParse(line, out num)) {
+                Console.WriteLine("{0:#,#}",num);
+            } else {
+                Console.WriteLine("数字文字列ではありません");
+            }            
         }
     }
 }

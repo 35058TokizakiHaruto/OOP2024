@@ -40,8 +40,10 @@ namespace Exercise01 {
 
         }
         private static void Exercise1_3(int[] numbers) {
-            string[] result = Array.ConvertAll(numbers, x => x.ToString());
-            Console.WriteLine(String.Join(",", result));
+            var strings = numbers.Select(x => x.ToString().ToArray());
+            foreach (var result in strings) {
+                Console.WriteLine(result);
+            }
         }
 
         private static void Exercise1_4(int[] numbers) {
@@ -52,7 +54,7 @@ namespace Exercise01 {
         }
         private static void Exercise1_5(int[] numbers) {
             var results = numbers.Distinct().ToList();
-            int intCount = results.Count(x => 10 < x);
+            int intCount = numbers.Count(x => 10 < x);
             Console.WriteLine(intCount);
         }
     }

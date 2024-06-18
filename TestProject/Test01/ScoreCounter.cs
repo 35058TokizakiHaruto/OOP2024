@@ -18,12 +18,12 @@ namespace Test01 {
             string[] lines = File.ReadAllLines(filePath);
             foreach (var line in lines) {
                 string[] items = line.Split(',');
-                Student studen = new Student() {
+                Student student = new Student() {
                     Name = items[0],
                     Subject = items[1],
                     Score = int.Parse(items[2])
                 };
-                students.Add(studen);
+                students.Add(student);
             }
             return students;
 

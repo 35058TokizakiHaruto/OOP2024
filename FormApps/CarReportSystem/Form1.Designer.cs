@@ -46,15 +46,15 @@
             tbReport = new TextBox();
             label7 = new Label();
             btPicOpen = new Button();
-            bpPicDelete = new Button();
+            btPicDelete = new Button();
             pbPicture = new PictureBox();
-            bpAddReport = new Button();
-            bpModifyReport = new Button();
-            bpDeleteReport = new Button();
-            bpReportSave = new Button();
+            btAddReport = new Button();
+            btModifyReport = new Button();
+            btDeleteReport = new Button();
+            btReportSave = new Button();
             button8 = new Button();
             dgvCarReport = new DataGridView();
-            bpReportOpen = new Button();
+            btReportOpen = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbPicture).BeginInit();
@@ -298,14 +298,14 @@
             btPicOpen.Text = "開く...";
             btPicOpen.UseVisualStyleBackColor = true;
             // 
-            // bpPicDelete
+            // btPicDelete
             // 
-            bpPicDelete.Location = new Point(695, 56);
-            bpPicDelete.Name = "bpPicDelete";
-            bpPicDelete.Size = new Size(75, 23);
-            bpPicDelete.TabIndex = 6;
-            bpPicDelete.Text = "削除";
-            bpPicDelete.UseVisualStyleBackColor = true;
+            btPicDelete.Location = new Point(695, 56);
+            btPicDelete.Name = "btPicDelete";
+            btPicDelete.Size = new Size(75, 23);
+            btPicDelete.TabIndex = 6;
+            btPicDelete.Text = "削除";
+            btPicDelete.UseVisualStyleBackColor = true;
             // 
             // pbPicture
             // 
@@ -316,41 +316,42 @@
             pbPicture.TabIndex = 7;
             pbPicture.TabStop = false;
             // 
-            // bpAddReport
+            // btAddReport
             // 
-            bpAddReport.Location = new Point(500, 325);
-            bpAddReport.Name = "bpAddReport";
-            bpAddReport.Size = new Size(75, 23);
-            bpAddReport.TabIndex = 6;
-            bpAddReport.Text = "追加";
-            bpAddReport.UseVisualStyleBackColor = true;
+            btAddReport.Location = new Point(500, 325);
+            btAddReport.Name = "btAddReport";
+            btAddReport.Size = new Size(75, 23);
+            btAddReport.TabIndex = 6;
+            btAddReport.Text = "追加";
+            btAddReport.UseVisualStyleBackColor = true;
+          
             // 
-            // bpModifyReport
+            // btModifyReport
             // 
-            bpModifyReport.Location = new Point(597, 325);
-            bpModifyReport.Name = "bpModifyReport";
-            bpModifyReport.Size = new Size(75, 23);
-            bpModifyReport.TabIndex = 6;
-            bpModifyReport.Text = "修正";
-            bpModifyReport.UseVisualStyleBackColor = true;
+            btModifyReport.Location = new Point(597, 325);
+            btModifyReport.Name = "btModifyReport";
+            btModifyReport.Size = new Size(75, 23);
+            btModifyReport.TabIndex = 6;
+            btModifyReport.Text = "修正";
+            btModifyReport.UseVisualStyleBackColor = true;
             // 
-            // bpDeleteReport
+            // btDeleteReport
             // 
-            bpDeleteReport.Location = new Point(694, 325);
-            bpDeleteReport.Name = "bpDeleteReport";
-            bpDeleteReport.Size = new Size(75, 23);
-            bpDeleteReport.TabIndex = 6;
-            bpDeleteReport.Text = "削除";
-            bpDeleteReport.UseVisualStyleBackColor = true;
+            btDeleteReport.Location = new Point(694, 325);
+            btDeleteReport.Name = "btDeleteReport";
+            btDeleteReport.Size = new Size(75, 23);
+            btDeleteReport.TabIndex = 6;
+            btDeleteReport.Text = "削除";
+            btDeleteReport.UseVisualStyleBackColor = true;
             // 
-            // bpReportSave
+            // btReportSave
             // 
-            bpReportSave.Location = new Point(25, 469);
-            bpReportSave.Name = "bpReportSave";
-            bpReportSave.Size = new Size(56, 23);
-            bpReportSave.TabIndex = 6;
-            bpReportSave.Text = "保存";
-            bpReportSave.UseVisualStyleBackColor = true;
+            btReportSave.Location = new Point(25, 469);
+            btReportSave.Name = "btReportSave";
+            btReportSave.Size = new Size(56, 23);
+            btReportSave.TabIndex = 6;
+            btReportSave.Text = "保存";
+            btReportSave.UseVisualStyleBackColor = true;
             // 
             // button8
             // 
@@ -372,14 +373,14 @@
             dgvCarReport.Size = new Size(666, 132);
             dgvCarReport.TabIndex = 8;
             // 
-            // bpReportOpen
+            // btReportOpen
             // 
-            bpReportOpen.Location = new Point(25, 430);
-            bpReportOpen.Name = "bpReportOpen";
-            bpReportOpen.Size = new Size(56, 23);
-            bpReportOpen.TabIndex = 6;
-            bpReportOpen.Text = "開く";
-            bpReportOpen.UseVisualStyleBackColor = true;
+            btReportOpen.Location = new Point(25, 430);
+            btReportOpen.Name = "btReportOpen";
+            btReportOpen.Size = new Size(56, 23);
+            btReportOpen.TabIndex = 6;
+            btReportOpen.Text = "開く";
+            btReportOpen.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -388,13 +389,13 @@
             ClientSize = new Size(803, 571);
             Controls.Add(dgvCarReport);
             Controls.Add(pbPicture);
-            Controls.Add(bpPicDelete);
-            Controls.Add(bpDeleteReport);
-            Controls.Add(bpModifyReport);
-            Controls.Add(bpReportOpen);
-            Controls.Add(bpReportSave);
+            Controls.Add(btPicDelete);
+            Controls.Add(btDeleteReport);
+            Controls.Add(btModifyReport);
+            Controls.Add(btReportOpen);
+            Controls.Add(btReportSave);
             Controls.Add(button8);
-            Controls.Add(bpAddReport);
+            Controls.Add(btAddReport);
             Controls.Add(btPicOpen);
             Controls.Add(tbReport);
             Controls.Add(groupBox2);
@@ -446,14 +447,14 @@
         private RadioButton rbOther;
         private Label label7;
         private Button btPicOpen;
-        private Button bpPicDelete;
+        private Button btPicDelete;
         private PictureBox pbPicture;
-        private Button bpAddReport;
-        private Button bpModifyReport;
-        private Button bpDeleteReport;
-        private Button bpReportSave;
+        private Button btAddReport;
+        private Button btModifyReport;
+        private Button btDeleteReport;
+        private Button btReportSave;
         private Button button8;
         private DataGridView dgvCarReport;
-        private Button bpReportOpen;
+        private Button btReportOpen;
     }
 }

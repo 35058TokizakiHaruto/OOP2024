@@ -15,7 +15,6 @@ namespace CarReportSystem {
             その他,
         }
 
-
         public DateTime Date { get; set; }  //日付
         public string Auther { get; set; } = string.Empty; //記録者
         public MakerGroup Maker { get; set; }   //メーカー

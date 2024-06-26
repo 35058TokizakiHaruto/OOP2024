@@ -201,14 +201,14 @@
             groupBox2.Controls.Add(rbToyota);
             groupBox2.Location = new Point(103, 145);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(348, 43);
+            groupBox2.Size = new Size(343, 43);
             groupBox2.TabIndex = 4;
             groupBox2.TabStop = false;
             // 
             // rbOther
             // 
             rbOther.AutoSize = true;
-            rbOther.Location = new Point(286, 15);
+            rbOther.Location = new Point(283, 15);
             rbOther.Name = "rbOther";
             rbOther.Size = new Size(56, 19);
             rbOther.TabIndex = 3;
@@ -219,7 +219,7 @@
             // rbImport
             // 
             rbImport.AutoSize = true;
-            rbImport.Location = new Point(219, 15);
+            rbImport.Location = new Point(220, 15);
             rbImport.Name = "rbImport";
             rbImport.Size = new Size(61, 19);
             rbImport.TabIndex = 3;
@@ -230,7 +230,7 @@
             // rbSubaru
             // 
             rbSubaru.AutoSize = true;
-            rbSubaru.Location = new Point(159, 15);
+            rbSubaru.Location = new Point(164, 15);
             rbSubaru.Name = "rbSubaru";
             rbSubaru.Size = new Size(54, 19);
             rbSubaru.TabIndex = 3;
@@ -241,7 +241,7 @@
             // rbHonda
             // 
             rbHonda.AutoSize = true;
-            rbHonda.Location = new Point(111, 15);
+            rbHonda.Location = new Point(109, 15);
             rbHonda.Name = "rbHonda";
             rbHonda.Size = new Size(53, 19);
             rbHonda.TabIndex = 3;
@@ -252,7 +252,7 @@
             // rbNissan
             // 
             rbNissan.AutoSize = true;
-            rbNissan.Location = new Point(56, 15);
+            rbNissan.Location = new Point(58, 15);
             rbNissan.Name = "rbNissan";
             rbNissan.Size = new Size(49, 19);
             rbNissan.TabIndex = 3;

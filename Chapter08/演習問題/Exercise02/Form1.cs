@@ -1,10 +1,9 @@
 using System.Globalization;
-using System.Net.WebSockets;
 
-namespace Exercise01 {
+namespace Exercise02 {
     public partial class Form1 : Form {
         public Form1() {
-            InitializeComponent(GetBtEx8_1());
+            InitializeComponent();
         }
 
         private void btEx8_1_Click(object sender, EventArgs e) {
@@ -17,6 +16,7 @@ namespace Exercise01 {
             tbDisp.Text += doday.ToString("ggyy”NMŒŽd“ú (dddd) ", culture);
 
         }
+
 
         private void btEx8_2_Click(object sender, EventArgs e) {
             var dateTime = DateTime.Today;
@@ -35,6 +35,7 @@ namespace Exercise01 {
             var nextweek = date.AddDays(7);
             var day = (int)dayOfWeek - (int)date.DayOfWeek;
             return nextweek.AddDays(day);
+
         }
 
         private void btEx8_3_Click(object sender, EventArgs e) {
@@ -50,14 +51,11 @@ namespace Exercise01 {
         private DateTime _time;
 
         public void Start() {
-
-
+            _time = DateTime.Now;
 
         }
-
         public TimeSpan Stop() {
-            
+            return DateTime.Now - _time;
         }
     }
 }
-

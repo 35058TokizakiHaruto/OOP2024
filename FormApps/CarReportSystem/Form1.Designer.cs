@@ -55,6 +55,7 @@
             button8 = new Button();
             dgvCarReport = new DataGridView();
             btReportOpen = new Button();
+            ofdPicFileOpen = new OpenFileDialog();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbPicture).BeginInit();
@@ -313,6 +314,7 @@
             pbPicture.Location = new Point(519, 85);
             pbPicture.Name = "pbPicture";
             pbPicture.Size = new Size(251, 212);
+            pbPicture.SizeMode = PictureBoxSizeMode.Zoom;
             pbPicture.TabIndex = 7;
             pbPicture.TabStop = false;
             // 
@@ -324,7 +326,7 @@
             btAddReport.TabIndex = 6;
             btAddReport.Text = "追加";
             btAddReport.UseVisualStyleBackColor = true;
-          
+            btAddReport.Click += btAddReport_Click;
             // 
             // btModifyReport
             // 
@@ -382,6 +384,11 @@
             btReportOpen.Text = "開く";
             btReportOpen.UseVisualStyleBackColor = true;
             // 
+            // ofdPicFileOpen
+            // 
+            ofdPicFileOpen.FileName = "openFileDialog1";
+            ofdPicFileOpen.FileOk += btPicOpen_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -412,6 +419,7 @@
             Controls.Add(label1);
             Name = "Form1";
             Text = "試乗レポート管理システム";
+            Load += Form1_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
@@ -456,5 +464,6 @@
         private Button button8;
         private DataGridView dgvCarReport;
         private Button btReportOpen;
+        private OpenFileDialog ofdPicFileOpen;
     }
 }

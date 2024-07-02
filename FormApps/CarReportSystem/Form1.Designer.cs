@@ -30,7 +30,7 @@
             label4 = new Label();
             cbCarName = new ComboBox();
             label5 = new Label();
-            cbAuther = new ComboBox();
+            cbAuthor = new ComboBox();
             radioButton1 = new RadioButton();
             groupBox1 = new GroupBox();
             radioButton3 = new RadioButton();
@@ -129,14 +129,14 @@
             label5.Size = new Size(0, 25);
             label5.TabIndex = 0;
             // 
-            // cbAuther
+            // cbAuthor
             // 
-            cbAuther.Font = new Font("Yu Gothic UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 128);
-            cbAuther.FormattingEnabled = true;
-            cbAuther.Location = new Point(100, 88);
-            cbAuther.Name = "cbAuther";
-            cbAuther.Size = new Size(283, 33);
-            cbAuther.TabIndex = 2;
+            cbAuthor.Font = new Font("Yu Gothic UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            cbAuthor.FormattingEnabled = true;
+            cbAuthor.Location = new Point(100, 88);
+            cbAuthor.Name = "cbAuthor";
+            cbAuthor.Size = new Size(283, 33);
+            cbAuthor.TabIndex = 2;
             // 
             // radioButton1
             // 
@@ -213,7 +213,6 @@
             rbOther.Name = "rbOther";
             rbOther.Size = new Size(56, 19);
             rbOther.TabIndex = 3;
-            rbOther.TabStop = true;
             rbOther.Text = "その他";
             rbOther.UseVisualStyleBackColor = true;
             // 
@@ -224,7 +223,6 @@
             rbImport.Name = "rbImport";
             rbImport.Size = new Size(61, 19);
             rbImport.TabIndex = 3;
-            rbImport.TabStop = true;
             rbImport.Text = "輸入車";
             rbImport.UseVisualStyleBackColor = true;
             // 
@@ -235,7 +233,6 @@
             rbSubaru.Name = "rbSubaru";
             rbSubaru.Size = new Size(54, 19);
             rbSubaru.TabIndex = 3;
-            rbSubaru.TabStop = true;
             rbSubaru.Text = "スバル";
             rbSubaru.UseVisualStyleBackColor = true;
             // 
@@ -246,7 +243,6 @@
             rbHonda.Name = "rbHonda";
             rbHonda.Size = new Size(53, 19);
             rbHonda.TabIndex = 3;
-            rbHonda.TabStop = true;
             rbHonda.Text = "ホンダ";
             rbHonda.UseVisualStyleBackColor = true;
             // 
@@ -257,7 +253,6 @@
             rbNissan.Name = "rbNissan";
             rbNissan.Size = new Size(49, 19);
             rbNissan.TabIndex = 3;
-            rbNissan.TabStop = true;
             rbNissan.Text = "日産";
             rbNissan.UseVisualStyleBackColor = true;
             // 
@@ -268,7 +263,6 @@
             rbToyota.Name = "rbToyota";
             rbToyota.Size = new Size(50, 19);
             rbToyota.TabIndex = 3;
-            rbToyota.TabStop = true;
             rbToyota.Text = "トヨタ";
             rbToyota.UseVisualStyleBackColor = true;
             // 
@@ -336,6 +330,7 @@
             btModifyReport.TabIndex = 6;
             btModifyReport.Text = "修正";
             btModifyReport.UseVisualStyleBackColor = true;
+            btModifyReport.Click += btModifyReport_Click;
             // 
             // btDeleteReport
             // 
@@ -345,6 +340,7 @@
             btDeleteReport.TabIndex = 6;
             btDeleteReport.Text = "削除";
             btDeleteReport.UseVisualStyleBackColor = true;
+            btDeleteReport.Click += btDeleteReport_Click;
             // 
             // btReportSave
             // 
@@ -374,6 +370,7 @@
             dgvCarReport.ReadOnly = true;
             dgvCarReport.Size = new Size(666, 132);
             dgvCarReport.TabIndex = 8;
+            dgvCarReport.Click += dgvCarReport_Click;
             // 
             // btReportOpen
             // 
@@ -407,7 +404,7 @@
             Controls.Add(tbReport);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
-            Controls.Add(cbAuther);
+            Controls.Add(cbAuthor);
             Controls.Add(cbCarName);
             Controls.Add(dtpDate);
             Controls.Add(label6);
@@ -418,6 +415,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "Form1";
+            RightToLeftLayout = true;
             Text = "試乗レポート管理システム";
             Load += Form1_Load;
             groupBox1.ResumeLayout(false);
@@ -439,7 +437,7 @@
         private Label label4;
         private ComboBox cbCarName;
         private Label label5;
-        private ComboBox cbAuther;
+        private ComboBox cbAuthor;
         private RadioButton radioButton1;
         private GroupBox groupBox1;
         private RadioButton radioButton3;

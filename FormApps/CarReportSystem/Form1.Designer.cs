@@ -142,6 +142,7 @@
             cbAuthor.Name = "cbAuthor";
             cbAuthor.Size = new Size(283, 33);
             cbAuthor.TabIndex = 2;
+            cbAuthor.TextChanged += cbAuthor_TextChanged;
             // 
             // radioButton1
             // 
@@ -369,10 +370,12 @@
             // 
             dgvCarReport.AllowUserToAddRows = false;
             dgvCarReport.AllowUserToDeleteRows = false;
+            dgvCarReport.AllowUserToResizeRows = false;
             dgvCarReport.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCarReport.Location = new Point(104, 390);
             dgvCarReport.Name = "dgvCarReport";
             dgvCarReport.ReadOnly = true;
+            dgvCarReport.RowHeadersVisible = false;
             dgvCarReport.Size = new Size(666, 132);
             dgvCarReport.TabIndex = 8;
             dgvCarReport.Click += dgvCarReport_Click;

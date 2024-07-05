@@ -56,10 +56,15 @@
             dgvCarReport = new DataGridView();
             btReportOpen = new Button();
             ofdPicFileOpen = new OpenFileDialog();
+            ssMassageArea = new StatusStrip();
+            tslbMassage = new ToolStripStatusLabel();
+            tslbbMessage = new ToolStripStatusLabel();
+            tslbMessage = new ToolStripStatusLabel();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbPicture).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvCarReport).BeginInit();
+            ssMassageArea.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -353,7 +358,7 @@
             // 
             // button8
             // 
-            button8.Location = new Point(695, 529);
+            button8.Location = new Point(695, 523);
             button8.Name = "button8";
             button8.Size = new Size(75, 23);
             button8.TabIndex = 6;
@@ -386,11 +391,36 @@
             ofdPicFileOpen.FileName = "openFileDialog1";
             ofdPicFileOpen.FileOk += btPicOpen_Click;
             // 
+            // ssMassageArea
+            // 
+            ssMassageArea.Items.AddRange(new ToolStripItem[] { tslbMassage, tslbbMessage, tslbMessage });
+            ssMassageArea.Location = new Point(0, 549);
+            ssMassageArea.Name = "ssMassageArea";
+            ssMassageArea.Size = new Size(803, 22);
+            ssMassageArea.TabIndex = 9;
+            ssMassageArea.Text = "statusStrip1";
+            // 
+            // tslbMassage
+            // 
+            tslbMassage.Name = "tslbMassage";
+            tslbMassage.Size = new Size(0, 17);
+            // 
+            // tslbbMessage
+            // 
+            tslbbMessage.Name = "tslbbMessage";
+            tslbbMessage.Size = new Size(0, 17);
+            // 
+            // tslbMessage
+            // 
+            tslbMessage.Name = "tslbMessage";
+            tslbMessage.Size = new Size(0, 17);
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(803, 571);
+            Controls.Add(ssMassageArea);
             Controls.Add(dgvCarReport);
             Controls.Add(pbPicture);
             Controls.Add(btPicDelete);
@@ -424,6 +454,8 @@
             groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbPicture).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvCarReport).EndInit();
+            ssMassageArea.ResumeLayout(false);
+            ssMassageArea.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -463,5 +495,9 @@
         private DataGridView dgvCarReport;
         private Button btReportOpen;
         private OpenFileDialog ofdPicFileOpen;
+        private StatusStrip ssMassageArea;
+        private ToolStripStatusLabel tslbMassage;
+        private ToolStripStatusLabel tslbbMessage;
+        private ToolStripStatusLabel tslbMessage;
     }
 }

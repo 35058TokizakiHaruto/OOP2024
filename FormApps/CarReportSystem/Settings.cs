@@ -16,7 +16,7 @@ namespace CarReportSystem {
         private  Settings() { }
 
         //自インスタンスを返却するメソッド
-        public Settings getInstance() {
+        public static Settings getInstance() {
             if (instance == null) {
                 instance = new Settings();
             }

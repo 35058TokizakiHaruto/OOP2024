@@ -97,9 +97,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DateTimeApp", "FormApps\Dat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "演習問題", "演習問題", "{3B113331-B289-4D7C-800B-71E28BE0A9B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise01", "Chapter08\演習問題\Exercise02\Exercise01.csproj", "{D4215B3F-8EC6-4E78-B2A8-86EBEE32B41A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercise01", "Chapter08\演習問題\Exercise02\Exercise01.csproj", "{D4215B3F-8EC6-4E78-B2A8-86EBEE32B41A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarReportSystem", "FormApps\CarReportSystem\CarReportSystem.csproj", "{9F646881-55B1-457A-AF13-D7ECF11A2787}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarReportSystem", "FormApps\CarReportSystem\CarReportSystem.csproj", "{9F646881-55B1-457A-AF13-D7ECF11A2787}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{03BA26B9-5B23-4A02-B5DA-00819E0C3073}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

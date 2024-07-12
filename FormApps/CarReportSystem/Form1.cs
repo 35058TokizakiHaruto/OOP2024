@@ -2,6 +2,7 @@ using System.ComponentModel;
 using System.ComponentModel.Design.Serialization;
 using System.Configuration;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Diagnostics.Metrics;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -16,7 +17,8 @@ namespace CarReportSystem {
         BindingList<CarReport> listCarReports = new BindingList<CarReport>();
 
         //設定クラスのインスタンス作成
-        Settings settings = new Settings();
+        Settings settings = Settings.getInstance();
+
 
         //コンストラクタ
         public Form1() {
@@ -154,9 +156,11 @@ namespace CarReportSystem {
                 }
             }
             catch (Exception) {
-
+                tslbMessage.Text = "色情報ファイルエラー";
 
             }
+
+
 
 
         }

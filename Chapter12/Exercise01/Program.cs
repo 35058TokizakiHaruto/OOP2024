@@ -14,7 +14,7 @@ namespace Exercise01 {
             Exercise1_1("employee.xml");
 
             // これは確認用
-            Console.WriteLine(File.ReadAllText("employee.xml"));
+            Console.WriteLine(File.ReadAllText("employee.xml"));　
             Console.WriteLine();
 
             Exercise1_2("employees.xml");

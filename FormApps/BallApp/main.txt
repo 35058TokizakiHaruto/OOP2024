@@ -1,0 +1,12 @@
+var novels = new Novel[] {
+  new Novel {
+    Author = "アイザック・アシモフ",
+    Title = "われはロボット",
+    Published = 1950,
+  },
+  new Novel {
+    Author = "ジョージ・オーウェル",
+    Title = "一九八四年",
+    Published = 1949,
+  },
+};

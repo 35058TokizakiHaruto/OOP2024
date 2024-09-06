@@ -11,7 +11,7 @@ namespace Section01 {
             
             var xdoc = XDocument.Load("novelists.xml");
             var xtitles = xdoc.Root.Descendants("title");
-            
+
             //foreach (var xnovelist in xelements) {
             //    var xname = xnovelist.Element("name");//要素の取得
             //    var xworks = xnovelist.Element("masterpieces")

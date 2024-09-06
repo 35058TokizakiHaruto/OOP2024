@@ -3,33 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Xml;
-using System.Xml.Serialization;
 
 namespace Section01 {
     internal class Program {
         static void Main(string[] args) {
 
-#if false           
+#if false
             var novel = new Novel {
                 Author = "ジェイムズ・P・ホーガン",
                 Title = "星を継ぐもの",
                 Published = 1977,
-
             };
 
             var settings = new XmlWriterSettings {
                 Encoding = new UTF8Encoding(false),
                 Indent = true,
                 IndentChars = " ",
-
             };
 
-            using(var writer = XmlWriter.Create("novel.Xml", settings)) {
+            using (var writer = XmlWriter.Create("novel.xml", settings)) {
                 var serializer = new DataContractSerializer(novel.GetType());
-                serializer.WriteObject(writer,novel);
+                serializer.WriteObject(writer, novel);
             }
 #else
             using (var reader = XmlReader.Create("novel.xml")) {
@@ -37,7 +33,7 @@ namespace Section01 {
                 var novel = serializer.ReadObject(reader) as Novel;
                 Console.WriteLine(novel);
             }
-#endif         
+#endif
         }
     }
 }

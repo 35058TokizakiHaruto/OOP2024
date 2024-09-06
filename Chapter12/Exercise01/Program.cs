@@ -102,8 +102,7 @@ namespace Exercise01 {
                     WriteIndented = true,
                 };
 
-                JsonSerializer.Serialize(stream, emps, options);
-
+              //  JsonSerializer.Serialize(stream, emps, options);
             }
         }
     }

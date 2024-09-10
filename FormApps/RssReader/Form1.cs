@@ -12,7 +12,7 @@ using System.Xml.Linq;
 
 namespace RssReader {
     public partial class Form1 : Form {
-         List<RssItem> items;
+        List<RssItem> items;
         public Form1() {
             InitializeComponent();
         }
@@ -23,28 +23,17 @@ namespace RssReader {
                 var xdoc = XDocument.Load(url);
 
                 var items = xdoc.Root.Descendants("item")
-                                    .Select(item => new ItemData {
+                                    .Select(item => new RssItem {
                                         Title = item.Element("title").Value,
                                         Link = item.Element("link").Value,
                                     });
 
-                foreach (var item in items) {
-                    lbRssTitle.Items.Add(item.Title);
+                foreach (var title in items) {
+                    lbRssTitle.Items.Add(title.Title);
                 }
             }
         }
 
-        private void LbRssTitle_SelectedIndexChanged(object sender, EventArgs e) {
-            if (lbRssTitle.SelectedItem != null) {
-                var selectedTitle = lbRssTitle.SelectedItem.ToString();
-                var selectedItem = items.FirstOrDefault(item => item.Title == selectedTitle);
-
-                if (selectedItem != null) {
-                    webView21.Source = new Uri(selectedItem.Link);
-                }
-            }
-        }
-        
         private void cbURLorFavoriteName(object sender, EventArgs e) {
             Rss_ComboBox.Items.Add("主要");
             Rss_ComboBox.Items.Add("国内");
@@ -57,10 +46,41 @@ namespace RssReader {
             Rss_ComboBox.Items.Add("地域");
 
         }
+
+
+        private void LbRssTitle_SelectedIndexChanged(object sender, EventArgs e) {
+            try {
+                if (lbRssTitle.SelectedItem != null) {
+                    var selectedTitle = lbRssTitle.SelectedItem.ToString();
+                    if (items != null) {
+                        var selectedItem = items.FirstOrDefault(item => item.Title == selectedTitle);
+
+                        if (selectedItem != null) {
+                            if (!string.IsNullOrEmpty(selectedItem.Link)) {
+                                webView21.Source = new Uri(selectedItem.Link);
+                            } else {
+                                MessageBox.Show("Selected item link is null or empty.");
+                            }
+                        } else {
+                            MessageBox.Show("Selected item not found.");
+                        }
+                    } else {
+                        MessageBox.Show("Items collection is not initialized.");
+                    }
+                }
+            }
+            catch (Exception ex) {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+        }
+
+
+
+
     }
 }
 //データ格納用のクラス
-public class ItemData {
+public class RssItem {
     public string Title { get; set; }
     public string Link { get; set; }
 

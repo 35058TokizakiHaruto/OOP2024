@@ -319,6 +319,10 @@ namespace CarReportSystem {
             //fmVersion.Show();
             fmVersion.ShowDialog();
 
-        }              
+        }
+
+        private void cbAuthor_SelectedIndexChanged(object sender, EventArgs e) {
+
+        }
     }
 }

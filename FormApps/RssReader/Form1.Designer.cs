@@ -36,14 +36,14 @@
             // 
             // tbRssUrl
             // 
-            this.tbRssUrl.Location = new System.Drawing.Point(181, 45);
+            this.tbRssUrl.Location = new System.Drawing.Point(196, 45);
             this.tbRssUrl.Name = "tbRssUrl";
             this.tbRssUrl.Size = new System.Drawing.Size(130, 19);
             this.tbRssUrl.TabIndex = 0;
             // 
             // btGet
             // 
-            this.btGet.Location = new System.Drawing.Point(432, 9);
+            this.btGet.Location = new System.Drawing.Point(448, 12);
             this.btGet.Name = "btGet";
             this.btGet.Size = new System.Drawing.Size(75, 23);
             this.btGet.TabIndex = 1;
@@ -55,7 +55,7 @@
             // 
             this.lbRssTitle.FormattingEnabled = true;
             this.lbRssTitle.ItemHeight = 12;
-            this.lbRssTitle.Location = new System.Drawing.Point(37, 85);
+            this.lbRssTitle.Location = new System.Drawing.Point(50, 85);
             this.lbRssTitle.Name = "lbRssTitle";
             this.lbRssTitle.Size = new System.Drawing.Size(209, 316);
             this.lbRssTitle.TabIndex = 2;
@@ -74,7 +74,7 @@
             "IT",
             "科学",
             "地域"});
-            this.Rss_ComboBox.Location = new System.Drawing.Point(181, 12);
+            this.Rss_ComboBox.Location = new System.Drawing.Point(196, 12);
             this.Rss_ComboBox.Name = "Rss_ComboBox";
             this.Rss_ComboBox.Size = new System.Drawing.Size(236, 20);
             this.Rss_ComboBox.TabIndex = 4;
@@ -82,9 +82,11 @@
             // URL
             // 
             this.URL.AutoSize = true;
+            this.URL.Cursor = System.Windows.Forms.Cursors.Default;
+            this.URL.Font = new System.Drawing.Font("MS UI Gothic", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.URL.Location = new System.Drawing.Point(27, 17);
             this.URL.Name = "URL";
-            this.URL.Size = new System.Drawing.Size(148, 12);
+            this.URL.Size = new System.Drawing.Size(163, 12);
             this.URL.TabIndex = 5;
             this.URL.Text = "このURL又はお気に入り名称：";
             // 
@@ -103,15 +105,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("MS UI Gothic", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label1.Location = new System.Drawing.Point(89, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 12);
+            this.label1.Size = new System.Drawing.Size(94, 12);
             this.label1.TabIndex = 7;
             this.label1.Text = "お気に入り名称：";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(330, 43);
+            this.button1.Location = new System.Drawing.Point(342, 43);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 8;

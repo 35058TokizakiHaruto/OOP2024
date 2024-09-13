@@ -29,8 +29,8 @@ namespace RssReader {
                  { "科学", "https://news.yahoo.co.jp/rss/topics/science.xml" },
                  { "地域", "https://news.yahoo.co.jp/rss/topics/local.xml" },
                 };
+            Rss_ComboBox.Items.AddRange(rssDict.Keys).ToArray();
         }
-
 
         private void btGet_Click(object sender, EventArgs e) {
             using (var wc = new WebClient()) {
@@ -47,21 +47,22 @@ namespace RssReader {
                     lbRssTitle.Items.Add(title.Title);
                 }
             }
+
+            using (var wc = new WebClient()) {
+                var url = wc.OpenRead(Rss_ComboBox.Text);
+                var xdoc = XDocument.Load(url);
+
+                items = xdoc.Root.Descendants("item")
+                                   .Select(item => new RssItem {
+                                       Title = item.Element("title").Value,
+                                       Link = item.Element("link").Value,
+                                   }).ToList();
+
+                foreach (var title in items) {
+                    lbRssTitle.Items.Add(title.Title);
+                }
+            }
         }
-
-        private void cbURLorFavoriteName(object sender, EventArgs e) {
-            Rss_ComboBox.Items.Add("主要");
-            Rss_ComboBox.Items.Add("国内");
-            Rss_ComboBox.Items.Add("国際");
-            Rss_ComboBox.Items.Add("経済");
-            Rss_ComboBox.Items.Add("エンタメ");
-            Rss_ComboBox.Items.Add("スポーツ");
-            Rss_ComboBox.Items.Add("IT");
-            Rss_ComboBox.Items.Add("科学");
-            Rss_ComboBox.Items.Add("地域");
-
-        }
-
 
         private void LbRssTitle_SelectedIndexChanged(object sender, EventArgs e) {
             try {
@@ -69,7 +70,6 @@ namespace RssReader {
                     var selectedTitle = lbRssTitle.SelectedItem.ToString();
                     if (items != null) {
                         var selectedItem = items.FirstOrDefault(item => item.Title == selectedTitle);
-
                         if (selectedItem != null) {
                             if (!string.IsNullOrEmpty(selectedItem.Link)) {
                                 webView21.Source = new Uri(selectedItem.Link);
@@ -77,7 +77,6 @@ namespace RssReader {
                         }
                     }
                 }
-
             }
             catch (Exception ex) {
                 MessageBox.Show($"An error occurred: {ex.Message}");
@@ -85,6 +84,7 @@ namespace RssReader {
         }
     }
 }
+
 //データ格納用のクラス
 public class RssItem {
     public string Title { get; set; }

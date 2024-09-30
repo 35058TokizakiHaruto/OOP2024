@@ -82,6 +82,10 @@ namespace RssReader {
                 MessageBox.Show($"An error occurred: {ex.Message}");
             }
         }
+
+        private void Form1_Load(object sender, EventArgs e) {
+
+        }
     }
 }
 

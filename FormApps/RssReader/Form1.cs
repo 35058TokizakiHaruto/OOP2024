@@ -29,12 +29,28 @@ namespace RssReader {
                  { "科学", "https://news.yahoo.co.jp/rss/topics/science.xml" },
                  { "地域", "https://news.yahoo.co.jp/rss/topics/local.xml" },
                 };
-          
+
+            foreach (var item in rssDict.Keys) {
+                cbRssUrl.Items.Add(item);
+            }
+            cbRssUrl.SelectedIndexChanged += cbRssUrl_SelectedIndexChanged;
         }
 
+        private void cbRssUrl_SelectedIndexChanged(object sender, EventArgs e) {
+            lbRssTitle.Items.Clear();
+        }
+
+
+
         private void btGet_Click(object sender, EventArgs e) {
+            if(cbRssUrl.SelectedItem == null)
+                    return;
+            
+            string selectedCategory = cbRssUrl.SelectedItem.ToString();
+            string rssUrl = rssDict[selectedCategory];
+
             using (var wc = new WebClient()) {
-                var url = wc.OpenRead(Rss_ComboBox.Text);
+                var url = wc.OpenRead(rssUrl);
                 var xdoc = XDocument.Load(url);
 
                 items = xdoc.Root.Descendants("item")
@@ -46,22 +62,7 @@ namespace RssReader {
                 foreach (var title in items) {
                     lbRssTitle.Items.Add(title.Title);
                 }
-            }
-
-            using (var wc = new WebClient()) {
-                var url = wc.OpenRead(Rss_ComboBox.Text);
-                var xdoc = XDocument.Load(url);
-
-                items = xdoc.Root.Descendants("item")
-                                   .Select(item => new RssItem {
-                                       Title = item.Element("title").Value,
-                                       Link = item.Element("link").Value,
-                                   }).ToList();
-
-                foreach (var title in items) {
-                    lbRssTitle.Items.Add(title.Title);
-                }
-            }
+            }         
         }
 
         private void LbRssTitle_SelectedIndexChanged(object sender, EventArgs e) {
@@ -85,15 +86,25 @@ namespace RssReader {
 
 
         private void button1_Click(object sender, EventArgs e) {
-            button1.Enabled = false;
+            tbGet.Enabled = false;
 
-            string faboriteTitle = tbRssUrl.Text.Trim();
-            string selectedUr1 = cbRssUrl.Text.Tostring();
+            string lbRssTitle = tbRssUrl.Text.Trim();
+            string selectedUr1 = cbRssUrl.Text.ToString();
 
-            if(!string.IsNullOrEmpty(fovoriteTitle)%% !string.IsNullOrEmpty())
+            if (!string.IsNullOrEmpty(lbRssTitle) && !string.IsNullOrEmpty(selectedUr1)) {
+                cbRssUrl.Items.Add(lbRssTitle);
+                rssDict[lbRssTitle] = selectedUr1;
+                tbRssUrl.Clear();
+                MessageBox.Show("登録完了");
+            } else {
+                MessageBox.Show("タイトルとURLの両方を入力してください");
+
+            }
+            tbGet.Enabled = true;
         }
     }
 }
+
 
 //データ格納用のクラス
 public class RssItem {

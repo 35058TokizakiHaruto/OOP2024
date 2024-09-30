@@ -24,13 +24,13 @@
         /// </summary>
         private void InitializeComponent() {
             this.tbRssUrl = new System.Windows.Forms.TextBox();
-            this.btGet = new System.Windows.Forms.Button();
+            this.cbGet = new System.Windows.Forms.Button();
             this.lbRssTitle = new System.Windows.Forms.ListBox();
-            this.Rss_ComboBox = new System.Windows.Forms.ComboBox();
+            this.cbRssUrl = new System.Windows.Forms.ComboBox();
             this.URL = new System.Windows.Forms.Label();
             this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.tbGet = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,15 +41,15 @@
             this.tbRssUrl.Size = new System.Drawing.Size(130, 19);
             this.tbRssUrl.TabIndex = 0;
             // 
-            // btGet
+            // cbGet
             // 
-            this.btGet.Location = new System.Drawing.Point(448, 12);
-            this.btGet.Name = "btGet";
-            this.btGet.Size = new System.Drawing.Size(75, 23);
-            this.btGet.TabIndex = 1;
-            this.btGet.Text = "取得";
-            this.btGet.UseVisualStyleBackColor = true;
-            this.btGet.Click += new System.EventHandler(this.btGet_Click);
+            this.cbGet.Location = new System.Drawing.Point(448, 12);
+            this.cbGet.Name = "cbGet";
+            this.cbGet.Size = new System.Drawing.Size(75, 23);
+            this.cbGet.TabIndex = 1;
+            this.cbGet.Text = "取得";
+            this.cbGet.UseVisualStyleBackColor = true;
+            this.cbGet.Click += new System.EventHandler(this.btGet_Click);
             // 
             // lbRssTitle
             // 
@@ -61,23 +61,13 @@
             this.lbRssTitle.TabIndex = 2;
             this.lbRssTitle.SelectedIndexChanged += new System.EventHandler(this.LbRssTitle_SelectedIndexChanged);
             // 
-            // Rss_ComboBox
+            // cbRssUrl
             // 
-            this.Rss_ComboBox.FormattingEnabled = true;
-            this.Rss_ComboBox.Items.AddRange(new object[] {
-            "主要",
-            "国内",
-            "国際",
-            "経済",
-            "エンタメ",
-            "スポーツ",
-            "IT",
-            "科学",
-            "地域"});
-            this.Rss_ComboBox.Location = new System.Drawing.Point(196, 12);
-            this.Rss_ComboBox.Name = "Rss_ComboBox";
-            this.Rss_ComboBox.Size = new System.Drawing.Size(236, 20);
-            this.Rss_ComboBox.TabIndex = 4;
+            this.cbRssUrl.FormattingEnabled = true;
+            this.cbRssUrl.Location = new System.Drawing.Point(196, 12);
+            this.cbRssUrl.Name = "cbRssUrl";
+            this.cbRssUrl.Size = new System.Drawing.Size(236, 20);
+            this.cbRssUrl.TabIndex = 4;
             // 
             // URL
             // 
@@ -112,15 +102,15 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "お気に入り名称：";
             // 
-            // button1
+            // tbGet
             // 
-            this.button1.Location = new System.Drawing.Point(342, 43);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "登録";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.tbGet.Location = new System.Drawing.Point(342, 43);
+            this.tbGet.Name = "tbGet";
+            this.tbGet.Size = new System.Drawing.Size(75, 23);
+            this.tbGet.TabIndex = 8;
+            this.tbGet.Text = "登録";
+            this.tbGet.UseVisualStyleBackColor = true;
+            this.tbGet.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -128,13 +118,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.ClientSize = new System.Drawing.Size(1053, 745);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.tbGet);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.webView21);
             this.Controls.Add(this.URL);
-            this.Controls.Add(this.Rss_ComboBox);
+            this.Controls.Add(this.cbRssUrl);
             this.Controls.Add(this.lbRssTitle);
-            this.Controls.Add(this.btGet);
+            this.Controls.Add(this.cbGet);
             this.Controls.Add(this.tbRssUrl);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "Form1";
@@ -148,13 +138,13 @@
         #endregion
 
         private System.Windows.Forms.TextBox tbRssUrl;
-        private System.Windows.Forms.Button btGet;
+        private System.Windows.Forms.Button cbGet;
         private System.Windows.Forms.ListBox lbRssTitle;
-        private System.Windows.Forms.ComboBox Rss_ComboBox;
+        private System.Windows.Forms.ComboBox cbRssUrl;
         private System.Windows.Forms.Label URL;
         private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button tbGet;
     }
 }
 

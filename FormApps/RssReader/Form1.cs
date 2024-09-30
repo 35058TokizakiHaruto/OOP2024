@@ -29,7 +29,7 @@ namespace RssReader {
                  { "科学", "https://news.yahoo.co.jp/rss/topics/science.xml" },
                  { "地域", "https://news.yahoo.co.jp/rss/topics/local.xml" },
                 };
-            Rss_ComboBox.Items.AddRange(rssDict.Keys).ToArray();
+          
         }
 
         private void btGet_Click(object sender, EventArgs e) {
@@ -83,8 +83,14 @@ namespace RssReader {
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e) {
 
+        private void button1_Click(object sender, EventArgs e) {
+            button1.Enabled = false;
+
+            string faboriteTitle = tbRssUrl.Text.Trim();
+            string selectedUr1 = cbRssUrl.Text.Tostring();
+
+            if(!string.IsNullOrEmpty(fovoriteTitle)%% !string.IsNullOrEmpty())
         }
     }
 }

@@ -101,7 +101,7 @@ namespace RssReader {
 
             }
             tbGet.Enabled = true;
-        }
+        }       
     }
 }
 

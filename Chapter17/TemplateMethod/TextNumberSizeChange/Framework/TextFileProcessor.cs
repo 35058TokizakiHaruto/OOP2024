@@ -9,10 +9,12 @@ using System.Threading.Tasks;
 namespace TextNumberSizeChange.Framework {
     public class TextFileProcessor {
         private ITextFileService _service;
+        private ToHankakuProcessor toHankakuProcessor;
 
         public TextFileProcessor(ITextFileService service) {
             _service = service;
         }
+
 
         public void Run(string fileName) {
             _service.Initialize(fileName);

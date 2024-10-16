@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using TextFileProcessor;
+
 
 namespace TextNumberSizeChange {
     class ToHankakuProcessor : TextProcessor {
@@ -15,13 +17,14 @@ namespace TextNumberSizeChange {
         private int _count;
         string _text = "";
 
-        protected override void Initialize(string fname) {
+        protected override void Initialize(string name) {
             _count = 0;
         }
 
         protected override void Execute(string line) {
-
-            _text += line;
+            String numberLower = new string
+                (line.Select(n => (ToHankaku.ContainsKey(n) ? ToHankaku[n] : n)).ToArray());
+            Console.WriteLine(numberLower);
             _count++;
         }
 

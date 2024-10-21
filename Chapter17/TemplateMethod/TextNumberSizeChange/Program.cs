@@ -10,8 +10,8 @@ namespace TextNumberSizeChange {
         static void Main(string[] args) {
             // TextProcessor.Run<ToHankakuProcessor>(args[0]);
 
-            var procrssor = new Framework.TextFileProcessor(new ToHankakuProcessor());
-            procrssor.Run(args[0]);
+            var procerssor = new Framework.TextFileProcessor(new ToHankakuProcessor());
+            procerssor.Run(args[0]);
         }
     }
 }

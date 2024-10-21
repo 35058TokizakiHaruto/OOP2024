@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="100" Width="300">
     <StackPanel>
-        <Slider x:Name="SamoleSlider"/>
-        <TextBox Text="{Binding ElementName=SamoleSlider,Path=Value,Mode=OneTime,UpdateSourceTrigger=PropertyChanged}"/>
+        <Slider x:Name="SampleSlider"/>
+        <TextBox Text="{Binding ElementName=SampleSlider,Path=Value,Mode=OneTime,UpdateSourceTrigger=PropertyChanged}"/>
     </StackPanel>
 </Window>

@@ -24,15 +24,33 @@ namespace CollorChecker {
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e) {
             var r = (int)rSlider.Value;
-            rValue.Text  = r.ToString();
+            rValue.Text = r.ToString();
             var g = (int)gSlider.Value;
-            gValue.Text = r.ToString();
+            gValue.Text = g.ToString();
             var b = (int)bSlider.Value;
-            bValue.Text = r.ToString();
+            bValue.Text = b.ToString();
 
             var newcolor = Color.FromRgb((byte)r, (byte)g, (byte)b);
 
             colorArea.Background = new SolidColorBrush(newcolor);
+        }
+
+        private void stockButton_Click(object sender, RoutedEventArgs e) {
+            var rValue = (byte)rSlider.Value;
+            var gValue = (byte)gSlider.Value;
+            var bValue = (byte)bSlider.Value;
+            var color = new MyColor();
+            color.Color = Color.FromRgb(rValue, gValue, bValue);
+
+            stockList.Items.Add(color);
+        }
+
+        private void stockList_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+            if(stockList.SelectedItem is MyColor selectedColor) {
+                rValue.Text = selectedColor.Color.R.ToString();
+                gValue.Text = selectedColor.Color.G.ToString();
+                bValue.Text = selectedColor.Color.B.ToString();
+            }
         }
     }
 }

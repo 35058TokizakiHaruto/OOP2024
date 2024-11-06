@@ -42,7 +42,7 @@ namespace CollorChecker {
             var color = new MyColor();
             color.Color = Color.FromRgb(rValue, gValue, bValue);
 
-            stockList.Items.Add(color);
+            stockList.Items.Insert(0,color);
         }
 
         private void stockList_SelectionChanged(object sender, SelectionChangedEventArgs e) {

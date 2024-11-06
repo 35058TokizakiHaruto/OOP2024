@@ -50,7 +50,7 @@
                 <RowDefinition Height="5*"/>
             </Grid.RowDefinitions>
             <Button x:Name="stockButton" Margin="10" Content="STOCK" FontSize="15" Click="stockButton_Click"/>
-            <ListBox  x:Name="stockList" Grid.Row="1" Margin="10,0,10,10" SelectionChanged="stockList_SelectionChanged" />
+            <ListBox  x:Name="stockList" Grid.Row="1" Margin="10,0,10,10" FontSize="15"  SelectionChanged="stockList_SelectionChanged"/>
         </Grid>
     </Grid>
 

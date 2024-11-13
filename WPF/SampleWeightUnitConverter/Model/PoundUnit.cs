@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 namespace SampleWeightUnitConverter {
     public class PoundUnit : WeightUnit {
         private static List<PoundUnit> units = new List<PoundUnit> {
-            new PoundUnit{ Name = "lb",Coefficient = 1,},
-            new PoundUnit{ Name = "oz",Coefficient = 16,},          
+            new PoundUnit{ Name = "oz",Coefficient = 1,},
+            new PoundUnit{ Name = "lb",Coefficient = 16,},
+            //new PoundUnit{ Name = "st",Coefficient = ,},
+            new PoundUnit{ Name = "",Coefficient = 10 * 1000,},
 
     };
         public static ICollection<PoundUnit> Units { get { return units; } }
@@ -20,7 +22,7 @@ namespace SampleWeightUnitConverter {
         /// <param name="value">値</param>
         /// <returns></returns>
         public double FromGramUnit(GramUnit unit, double value) {
-            return (value * unit.Coefficient) * 453.59237 / this.Coefficient;
+            return (value * unit.Coefficient) / 28.35 / this.Coefficient;
         }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CustomerApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="300" Width="300">
+        Title="MainWindow" Height="550" Width="300">
     <Grid RenderTransformOrigin="0.5,0.5">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="17*"/>
@@ -35,14 +35,18 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="名前" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
                 <TextBox x:Name="NameTextBox" Grid.Row="0" Grid.Column="1" Margin="2"/>
-                <TextBlock Text="電話番号" Grid.Row="1" Grid.Column="0"/>
-                <TextBox x:Name="PhoneTextBox" Grid.Row="1" Grid.Column="1"/>
-                <TextBlock Text="住所" Grid.Row="2" Grid.Column="0"/>
-                <TextBox x:Name="AdressTextBox" Grid.Row="2" Grid.Column="1"/>
+                <TextBlock Text="電話番号" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="PhoneTextBox" Grid.Row="1" Grid.Column="1" Margin="2"/>
+                <TextBlock Text="住所" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="AdressTextBox" Grid.Row="2" Grid.Column="1" Margin="2"/>
             </Grid>
             <Button Content="Save" x:Name="SaveButton" Click="SaveButton_Click" Margin="2"/>
+            <Button Content="Delete" x:Name="DeleteButton" Click="DeleteButton_Click" Margin="2"/>
             <Button Content="Read" x:Name="ReadButton" Click="ReadButton_Click" Margin="2"/>
-            <ListView x:Name="CustomerListView" Margin="0,5,0,0" Height="340">
+
+            <TextBox x:Name="SearchTextBox" FontSize="20" TextChanged="SearchTextBox_TextChanged"/>
+
+            <ListView x:Name="CustomerListView" Margin="0,5,0,0" Height="300">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>

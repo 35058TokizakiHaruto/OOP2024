@@ -6,17 +6,12 @@
         xmlns:local="clr-namespace:VisibilityConverter"
         mc:Ignorable="d"
         Title="MainWindow" Height="250" Width="300">
+
     <Window.Resources>
-        <DataTemplate DateType="{x:Type local:ColorViewModel}">
-            <StackPanel Orientation="Horizontal">
-                <Rectangle Width="12" Height="12">
-                    <Rectangle.Fill>
-                        <SolidColorBrush Color="{Binding Color}"/>
-                    </Rectangle.Fill>
-                </Rectangle>
-            </StackPanel>
-        </DataTemplate>
-     
+        <!-- BooleanToVisibilityConverterをリソースに追加 -->
+        <local:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+
+        <!-- カスタムボタンスタイル -->
         <Style x:Key="EllipseButton" TargetType="Button">
             <Setter Property="Template">
                 <Setter.Value>
@@ -37,27 +32,19 @@
     </Window.Resources>
 
     <StackPanel>
-        <StackPanel.Resources>
-            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
-        </StackPanel.Resources>
-
         <CheckBox x:Name="CheckBox" Content="設定大項目" IsChecked="False"/>
-        <StackPanel Visibility="{Binding IsChecked,
-                                ElementName=CheckBox,
-                                Converter={StaticResource BooleanToVisibilityConverter}}"
+
+        <!-- VisibilityをBooleanToVisibilityConverterで制御 -->
+        <StackPanel Visibility="{Binding IsChecked, ElementName=CheckBox, Converter={StaticResource BooleanToVisibilityConverter}}"
                     Margin="20,0,0,0">
             <RadioButton Content="赤" Click="RadioButton_Click"/>
             <RadioButton Content="青" Click="RadioButton_Click"/>
             <RadioButton Content="緑" Click="RadioButton_Click"/>
         </StackPanel>
 
-        <Button Style="{StaticResource EllipseButton}"
-                Content="ボタン1" Background="Gray" Click="Button_Click"/>
-
-        <Button Style="{StaticResource EllipseButton}" Padding="2"
-        Content="ボタン2" Background="LightBlue"/>
+        <Button Style="{StaticResource EllipseButton}" Content="ボタン1" Background="Gray" Click="Button_Click"/>
+        <Button Style="{StaticResource EllipseButton}" Padding="2" Content="ボタン2" Background="LightBlue"/>
         
-        <ComboBox ItemSource="{x:Static local:ColorViewModel.ColorList}"/>
-
+        <ComboBox ItemsSource="{x:Static local:ColorViewModel.ColorList}"/>
     </StackPanel>
 </Window>

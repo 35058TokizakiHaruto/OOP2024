@@ -39,8 +39,8 @@ namespace CustomerApp {
             ReadDatebase();//ListView表示
         }
 
-        private void ReadButton_Click(object sender, RoutedEventArgs e) {
-            // ReadDatebase();
+        private void UpdateButton_Click(object sender, RoutedEventArgs e) {
+            //ReadDatebase();
         }
 
         //ListView表示
@@ -71,6 +71,10 @@ namespace CustomerApp {
 
                 ReadDatebase();
             }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e) {
+            ReadDatebase();
         }
     }
 }

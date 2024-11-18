@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CustomerApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="300" Loaded="Window_Loaded" >
+        Title="MainWindow" Height="550" Width="500" Loaded="Window_Loaded" >
     <Grid RenderTransformOrigin="0.5,0.5">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="17*"/>
@@ -39,13 +39,19 @@
                 <TextBox x:Name="PhoneTextBox" Grid.Row="1" Grid.Column="1" Margin="2"/>
                 <TextBlock Text="住所" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
                 <TextBox x:Name="AdressTextBox" Grid.Row="2" Grid.Column="1" Margin="2"/>
+               
             </Grid>
             <Button Content="Save" x:Name="SaveButton" Click="SaveButton_Click" Margin="2"/>
             <Button Content="Delete" x:Name="DeleteButton" Click="DeleteButton_Click" Margin="2"/>
             <Button Content="Update" x:Name="UpdateButton" Click="UpdateButton_Click" Margin="2"/>
+            <Button Content="画像ファイルを開く" x:Name="OpenButton" Click="OpenButton_Click" Margin="2"/>
 
-            <TextBox x:Name="SearchTextBox" FontSize="20" TextChanged="SearchTextBox_TextChanged"/>
-
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                                     
             <ListView x:Name="CustomerListView" Margin="0,5,0,0" Height="300" SelectionChanged="CustomerListView_SelectionChanged">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -53,11 +59,14 @@
                             <TextBlock Text="{Binding Id}"/>
                             <TextBlock Text="{Binding Name}" FontSize="20"/>
                             <TextBlock Text="{Binding Phone}" Foreground="Blue"/>
-                            <TextBlock Text="{Binding Address}" Foreground="Green"/>
-                        </StackPanel>
+                                <TextBlock Text="{Binding Address}" Foreground="Green"/>
+                            </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+                <Image Name="ImageViewer" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200" Height="200"/>
+            </Grid>
+            <TextBox x:Name="SearchTextBox" FontSize="20" TextChanged="SearchTextBox_TextChanged"/>
         </StackPanel>
     </Grid>
 </Window>

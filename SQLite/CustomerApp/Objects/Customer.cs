@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,7 +25,12 @@ namespace CustomerApp.Objects {
         public string Address { get; set; }
 
         public override string ToString() {
-            return $"{Id} {Name} {Phone} {Address}";
+            return $"{Id} {Name} {Phone} {Address}";       
         }
+
+        ///<summary>
+        ///画像保存
+        ///</summary>
+        public byte[] ImageData { get; set; }      
     }
 }

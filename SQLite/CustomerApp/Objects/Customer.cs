@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace CustomerApp.Objects {
     public class Customer {
@@ -23,14 +24,13 @@ namespace CustomerApp.Objects {
         /// 住所
         /// </summary>
         public string Address { get; set; }
-
-        public override string ToString() {
-            return $"{Id} {Name} {Phone} {Address}";       
-        }
-
         ///<summary>
         ///画像保存
         ///</summary>
-        public byte[] ImageData { get; set; }      
+        public byte[] ImageData { get; set; }
+
+        public override string ToString() {
+            return $"{Id} {Name} {Phone} {Address} {ImageData}";
+        }
     }
 }

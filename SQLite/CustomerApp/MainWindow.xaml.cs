@@ -3,29 +3,34 @@ using Microsoft.Win32;
 using SQLite;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Media.Imaging;
 
 namespace CustomerApp {
     public partial class MainWindow : Window {
         List<Customer> _customers;
 
-        private byte[]_selectedImageDate;
+        private byte[] _selectedImageData; //画像データのバイト配列
 
         public MainWindow() {
             InitializeComponent();
         }
 
         // Save Button: 顧客データを追加
-        private void SaveButton_Click(object sender, RoutedEventArgs e) {
+        private void RegistButton_Click(object sender, RoutedEventArgs e) {
+            if (_selectedImageData == null || _selectedImageData.Length == 0) {
+                MessageBox.Show("画像が選択されていません。画像を選択してください。", "エラー", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
             var customer = new Customer() {
                 Name = NameTextBox.Text,
                 Phone = PhoneTextBox.Text,
                 Address = AdressTextBox.Text,
-
-                ImageData = _selectedImageDate
+                ImageData = _selectedImageData
             };
 
             using (var connection = new SQLiteConnection(App.databasePass)) {
@@ -48,6 +53,7 @@ namespace CustomerApp {
             selectedCustomer.Name = NameTextBox.Text;
             selectedCustomer.Phone = PhoneTextBox.Text;
             selectedCustomer.Address = AdressTextBox.Text;
+            selectedCustomer.ImageData = _selectedImageData;
 
             using (var connection = new SQLiteConnection(App.databasePass)) {
                 connection.CreateTable<Customer>();
@@ -63,6 +69,7 @@ namespace CustomerApp {
                 connection.CreateTable<Customer>();
                 _customers = connection.Table<Customer>().ToList();
 
+                CustomerListView.ItemsSource = null;
                 CustomerListView.ItemsSource = _customers;
             }
         }
@@ -104,28 +111,57 @@ namespace CustomerApp {
             }
         }
 
-        private void OpenButton_Click(object sender, RoutedEventArgs e) {
+        private void OpenFileButton_Click(object sender, RoutedEventArgs e) {
             var openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Image Files (*.jpg;*.jpeg;*.png;*.bmp;*.gif)|*.jpg;*.jpeg;*.png;*.bmp;*.gif|All Files (*.*)|*.*";
-
 
             if (openFileDialog.ShowDialog() == true) {
                 string selectedFilePath = openFileDialog.FileName;
 
                 try {
-                    // 選択された画像ファイルを読み込んで表示
-                    var bitmap = new BitmapImage(new Uri(selectedFilePath));
+                    // 画像をバイト配列として読み込む
+                    _selectedImageData = File.ReadAllBytes(selectedFilePath);
 
-                    // 画像を Image コントロールに設定
-                    ImageViewer.Source = bitmap;
+                    // 画像を Image コントロールに表示
+                    var bitmap = new BitmapImage();
+                    bitmap.BeginInit();
+                    bitmap.UriSource = new Uri(selectedFilePath, UriKind.Absolute);
+                    bitmap.EndInit();
 
-                    // メッセージボックスでファイルパスを表示（オプション）
+                    // ImageViewer コントロールに画像を設定 (XAMLのImageコントロール名に合わせる)
+                    //ImageData.Source = bitmap;
+
                     MessageBox.Show($"選択された画像ファイル: {selectedFilePath}", "画像ファイルの選択", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 catch (Exception ex) {
-                    MessageBox.Show($"画像を読み込む際にエラーが発生しました: {ex.Message}", "エラー", MessageBoxButton.OK, MessageBoxImage.Error);
+                    // より詳細なエラーメッセージを表示
+                    MessageBox.Show($"画像を読み込む際にエラーが発生しました: {ex.ToString()}", "エラー", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
+        }
+
+        public class ByteArrayToImageConverter : IValueConverter {
+            public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture) {
+                if (value is byte[] imageData && imageData.Length > 0) {
+                    using (var stream = new MemoryStream(imageData)) {
+                        return new BitmapImage { StreamSource = stream };
+                    }
+                }
+                return null;
+            }
+            public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture) {
+                throw new NotImplementedException();
+            }
+        }
+
+        private void ClearButton_Click(object sender, RoutedEventArgs e) {
+            NameTextBox.Clear();
+            PhoneTextBox.Clear();
+            AdressTextBox.Clear();
+            SearchTextBox.Clear();
+
+            _selectedImageData = null;
+            //ImageData.Source = null;
         }
     }
 }
